@@ -2,55 +2,95 @@ import { Link } from "react-router";
 
 export default function Navbar() {
   return (
-    <nav className="h-[83px] w-full bg-white">
-      <div className="flex h-full items-center justify-between px-[80px] py-[14px]">
+    <nav className="box-border flex h-[83px] w-[1920px] items-center justify-between border-b border-[rgba(171,61,36,0.5)] bg-white px-[80px] py-[14px]">
 
-        {/* Logo */}
-        <Link to="/">
-          <div className="h-[46.22px] w-[184.35px] bg-[#AB3D25]">
-            <img
-              src="/logo.png"
-              alt="Purabi General Insurance Co. Ltd."
-              className="h-full w-full object-contain"
-            />
-          </div>
+      {/* Left Logo Layout: 184.3504 × 46.2236 */}
+
+      {/* Inner Logo: 180 × 33.1722 */}
+
+
+      {/* Left Logo Layout */}
+      <div className="flex h-[46.2236px] w-[184.3504px] shrink-0 items-center justify-center bg-[rgba(171,61,37,1)]">
+        <img
+          src="/logo.png"
+          alt="Purabi General Insurance Co. Ltd."
+          className="h-[33.1722px] w-[180px] shrink-0 object-contain"
+        />
+      </div>
+
+
+      {/* Right Layout: 994 × 55 | Gap: 20px */}
+      <div className="flex h-[55px] w-[994px] shrink-0 items-center gap-[20px]">
+
+        {/* Home */}
+        <Link
+          to="/"
+          className="flex h-[55px] shrink-0 items-center justify-center whitespace-nowrap font-['Poppins'] text-[18px] font-normal leading-[100%] tracking-[0%] text-black"
+        >
+          Home
         </Link>
 
-        {/* Navigation */}
-        <div className="flex items-center gap-5">
-          <Link to="/" className="text-[13px]">
-            Home
-          </Link>
+        {/* About Us */}
+        <Link
+          to="/about"
+          className="flex h-[55px] shrink-0 items-center justify-center whitespace-nowrap font-['Poppins'] text-[18px] font-normal leading-[100%] tracking-[0%] text-black"
+        >
+          About Us
+        </Link>
 
-          <Link to="/about" className="text-[13px]">
-            About Us
-          </Link>
+        {/* Services */}
+        <Link
+          to="/services"
+          className="flex h-[55px] shrink-0 items-center justify-center gap-[10px] whitespace-nowrap font-['Poppins'] text-[18px] font-normal leading-[100%] tracking-[0%] text-black"
+        >
+          <span>Services</span>
 
-          <Link to="/services" className="text-[13px]">
-            Services
-          </Link>
+          <span className="text-[22px] leading-none">
+            ⌄
+          </span>
+        </Link>
 
-          <Link to="/claims" className="text-[13px]">
-            Claims
-          </Link>
+        {/* Claims */}
+        <Link
+          to="/claims"
+          className="flex h-[55px] shrink-0 items-center justify-center gap-[10px] whitespace-nowrap font-['Poppins'] text-[18px] font-normal leading-[100%] tracking-[0%] text-black"
+        >
+          <span>Claims</span>
 
-          <Link to="/blogs" className="text-[13px]">
-            Blogs
-          </Link>
+          <span className="text-[22px] leading-none">
+            ⌄
+          </span>
+        </Link>
 
-          <Link to="/contact" className="text-[13px]">
-            Contact Us
-          </Link>
+        {/* Blogs */}
+        <Link
+          to="/blogs"
+          className="flex h-[55px] shrink-0 items-center justify-center whitespace-nowrap font-['Poppins'] text-[18px] font-normal leading-[100%] tracking-[0%] text-black"
+        >
+          Blogs
+        </Link>
 
-          <Link
-            to="/quote"
-            className="bg-[#AC3E25] px-6 py-3 text-[13px] font-medium text-white"
-          >
-            Get A Quote
-          </Link>
-        </div>
+        {/* Contact Us */}
+        <Link
+          to="/contact"
+          className="flex h-[55px] shrink-0 items-center justify-center whitespace-nowrap font-['Poppins'] text-[18px] font-normal leading-[100%] tracking-[0%] text-black"
+        >
+          Contact Us
+        </Link>
+
+        {/* Get A Quote */}
+        <Link
+          to="/quote"
+          className="box-border flex h-[55px] w-[219px] shrink-0 items-center justify-center gap-[20px] rounded-[4px] bg-[rgba(172,62,37,1)] px-[24px] py-[14px] font-['Poppins'] text-[18px] font-medium leading-[100%] tracking-[0%] text-white"
+        >
+          <span>Get A Quote</span>
+
+          <span className="text-[22px] leading-none">
+            ↗
+          </span>
+        </Link>
 
       </div>
-    </nav>
+    </nav >
   );
 }

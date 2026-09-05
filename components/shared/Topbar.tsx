@@ -99,7 +99,6 @@ export default function Topbar() {
 
                 {/* Location */}
                 <div className="flex h-[18px] w-[407px] shrink-0 items-center gap-[10px]">
-
                     <img
                         src="/Vector (3).png"
                         alt=""
@@ -113,13 +112,11 @@ export default function Topbar() {
 
                 {/* Email */}
                 <div className="flex h-[18px] w-[200px] shrink-0 items-center gap-[10px]">
-
                     <img
                         src="/email-14_svgrepo.com.png"
                         alt=""
                         className="h-[12px] w-[12px] shrink-0 object-contain"
                     />
-
                     <a
                         href="mailto:purabiinsurance@gmail.com"
                         className="h-[18px] w-[178px] whitespace-nowrap font-['Poppins'] text-[12px] font-medium lowercase leading-[100%] tracking-[0%] text-white"
@@ -129,8 +126,7 @@ export default function Topbar() {
                 </div>
 
                 {/* Phone */}
-                <div className="flex h-[18px] w-[180px] shrink-0 items-center gap-[10px]">
-
+                <div className="flex h-[18px] w-[130px] shrink-0 items-center gap-[10px]">
                     <img
                         src="/Vector (4).png"
                         alt=""
@@ -149,28 +145,36 @@ export default function Topbar() {
             {/* ================= RIGHT LAYOUT ================= */}
             {/* Width: 880px | Height: 34px | Gap: 20px */}
 
-            <div className="flex h-[34px] w-[880px] shrink-0 items-center justify-end gap-[20px]">
+            <div className="flex h-[34px] w-[880px] shrink-0 items-center gap-[20px]">
 
-                {/* Client Portal */}
-                <Link
-                    to="/SignUp"
-                    className="flex h-[24px] w-[114px] shrink-0 items-center justify-center whitespace-nowrap text-center font-['Poppins'] text-[16px] font-normal uppercase leading-[100%] tracking-[0%] text-white"
-                >
-                    CLIENT PORTAL
-                </Link>
+                {/* ================= FIRST LAYOUT ================= */}
+                {/* Width: 288px | Height: 34px */}
 
-                {/* Agent Portal */}
-                <Link
-                    to="/agent-portal"
-                    className="flex h-[24px] w-[114px] shrink-0 items-center justify-center whitespace-nowrap text-center font-['Poppins'] text-[16px] font-normal uppercase leading-[100%] tracking-[0%] text-white"
-                >
-                    AGENT PORTAL
-                </Link>
+                <div className="flex h-[34px] w-[288px] shrink-0 items-center">
 
-                {/* Social Group */}
+                    {/* Client Portal */}
+                    <Link
+                        to="/SignUp"
+                        className="flex h-[24px] w-[144px] shrink-0 items-center justify-center whitespace-nowrap text-center font-['Poppins'] text-[16px] font-normal uppercase leading-[100%] tracking-[0%] text-white"
+                    >
+                        CLIENT PORTAL
+                    </Link>
+
+                    {/* Agent Portal */}
+                    <Link
+                        to="/agent-portal"
+                        className="flex h-[24px] w-[144px] shrink-0 items-center justify-center whitespace-nowrap text-center font-['Poppins'] text-[16px] font-normal uppercase leading-[100%] tracking-[0%] text-white"
+                    >
+                        AGENT PORTAL
+                    </Link>
+
+                </div>
+
+                {/* ================= SECOND LAYOUT ================= */}
                 {/* Width: 190px | Height: 30px | Gap: 10px */}
 
                 <div className="flex h-[30px] w-[190px] shrink-0 items-center gap-[10px]">
+
                     {socialLinks.map((social) => (
                         <a
                             key={social.name}
@@ -183,6 +187,7 @@ export default function Topbar() {
                             {social.icon}
                         </a>
                     ))}
+
                 </div>
             </div>
         </div>
