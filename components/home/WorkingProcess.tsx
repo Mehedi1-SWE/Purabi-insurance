@@ -4,7 +4,7 @@ export default function WorkingProcess() {
 
             {/* Main Background Image */}
             <img
-                src="/public/Background2.png"
+                src="/Background2.png"
                 alt=""
                 className="absolute inset-0 h-full w-full object-cover"
             />
