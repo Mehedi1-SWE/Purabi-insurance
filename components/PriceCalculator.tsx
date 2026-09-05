@@ -1,136 +1,57 @@
 import { useState } from "react";
+import { Link } from "react-router";
 
 export default function PriceCalculator() {
     const [selectedCategory, setSelectedCategory] = useState("Health");
 
+    const categories = [
+        { name: "Health", image: "/Health.png", width: "w-[100px]" },
+        { name: "Car", image: "/Car.png", width: "w-[100px]" },
+        { name: "Travel", image: "/Travel.png", width: "w-[100px]" },
+        { name: "Life", image: "/Life.png", width: "w-[100px]" },
+        { name: "Marine", image: "/Marine.png", width: "w-[100px]" },
+        { name: "Engineering", image: "/Engineering.png", width: "w-[108px]" },
+        { name: "More", image: "/More.png", width: "w-[100px]" },
+    ];
+
     return (
-        <section className="bg-[#F7ECEA] px-20 py-[100px]">
-            <div className="container mx-auto">
+        <section className="box-border flex h-[487.7104px] w-[1440px] min-w-[1280px] max-w-[1920px] flex-col gap-[10px] bg-[#F7ECEA] px-[80px] py-[100px]">
 
-                {/* Categories */}
-                <div className="mx-auto flex w-[948px] gap-10">
+            {/* Inner Layout: 1280 × 287.7104 */}
+            <div className="box-border flex h-[287.7104px] w-[1280px] shrink-0 flex-col gap-[50px]">
 
-                    {/* Health */}
-                    <button
-                        type="button"
-                        onClick={() => setSelectedCategory("Health")}
-                        className={`h-[132px] w-[100px] shrink-0 transition ${selectedCategory === "Health"
-                            ? "scale-105"
-                            : "opacity-60 hover:opacity-100"
-                            }`}
-                    >
-                        <img
-                            src="/Health.png"
-                            alt="Health"
-                            className="h-[132px] w-[100px] object-contain"
-                        />
-                    </button>
+                {/* Layout 1: 948 × 132 */}
+                <div className="flex h-[132px] w-[948px] shrink-0 gap-[40px]">
 
-                    {/* Car */}
-                    <button
-                        type="button"
-                        onClick={() => setSelectedCategory("Car")}
-                        className={`h-[132px] w-[100px] shrink-0 transition ${selectedCategory === "Car"
-                            ? "scale-105"
-                            : "opacity-60 hover:opacity-100"
-                            }`}
-                    >
-                        <img
-                            src="/Car.png"
-                            alt="Car"
-                            className="h-[132px] w-[100px] object-contain"
-                        />
-                    </button>
+                    {categories.map((category) => (
+                        <button
+                            key={category.name}
+                            type="button"
+                            onClick={() => setSelectedCategory(category.name)}
+                            className={`flex h-[132px] ${category.width} shrink-0 items-center justify-center transition ${selectedCategory === category.name
+                                ? "scale-105"
+                                : "opacity-60 hover:opacity-100"
+                                }`}
+                        >
+                            <img
+                                src={category.image}
+                                alt={category.name}
+                                className="h-[132px] w-full object-contain"
+                            />
+                        </button>
+                    ))}
 
-                    {/* Travel */}
-                    <button
-                        type="button"
-                        onClick={() => setSelectedCategory("Travel")}
-                        className={`h-[132px] w-[100px] shrink-0 transition ${selectedCategory === "Travel"
-                            ? "scale-105"
-                            : "opacity-60 hover:opacity-100"
-                            }`}
-                    >
-                        <img
-                            src="/Travel.png"
-                            alt="Travel"
-                            className="h-[132px] w-[100px] object-contain"
-                        />
-                    </button>
-
-                    {/* Life */}
-                    <button
-                        type="button"
-                        onClick={() => setSelectedCategory("Life")}
-                        className={`h-[132px] w-[100px] shrink-0 transition ${selectedCategory === "Life"
-                            ? "scale-105"
-                            : "opacity-60 hover:opacity-100"
-                            }`}
-                    >
-                        <img
-                            src="/Life.png"
-                            alt="Life"
-                            className="h-[132px] w-[100px] object-contain"
-                        />
-                    </button>
-
-                    {/* Marine */}
-                    <button
-                        type="button"
-                        onClick={() => setSelectedCategory("Marine")}
-                        className={`h-[132px] w-[100px] shrink-0 transition ${selectedCategory === "Marine"
-                            ? "scale-105"
-                            : "opacity-60 hover:opacity-100"
-                            }`}
-                    >
-                        <img
-                            src="/Marine.png"
-                            alt="Marine"
-                            className="h-[132px] w-[100px] object-contain"
-                        />
-                    </button>
-
-                    {/* Engineering */}
-                    <button
-                        type="button"
-                        onClick={() => setSelectedCategory("Engineering")}
-                        className={`h-[132px] w-[108px] shrink-0 transition ${selectedCategory === "Engineering"
-                            ? "scale-105"
-                            : "opacity-60 hover:opacity-100"
-                            }`}
-                    >
-                        <img
-                            src="/Engineering.png"
-                            alt="Engineering"
-                            className="h-[132px] w-[108px] object-contain"
-                        />
-                    </button>
-
-                    {/* More */}
-                    <button
-                        type="button"
-                        onClick={() => setSelectedCategory("More")}
-                        className={`h-[132px] w-[100px] shrink-0 transition ${selectedCategory === "More"
-                            ? "scale-105"
-                            : "opacity-60 hover:opacity-100"
-                            }`}
-                    >
-                        <img
-                            src="/More.png"
-                            alt="More"
-                            className="h-[132px] w-[100px] object-contain"
-                        />
-                    </button>
                 </div>
 
-                {/* Form */}
-                <div className="mx-auto mt-[40px] flex h-[105.71px] w-[1154.01px] items-start gap-[31.42px]">
+                {/* Layout 2: 1154.006 × 105.7104 */}
+                <div className="flex h-[105.7104px] w-[1154.006px] shrink-0 gap-[31.42px]">
 
-                    {/* Name */}
-                    <div className="flex h-[105.71px] w-[424.18px] shrink-0 flex-col gap-[15.71px]">
+                    {/* Child Layout 1 */}
+                    <div className="flex h-[105.7104px] w-[424.182px] shrink-0 flex-col gap-[15.71px]">
+
                         <label
                             htmlFor="name"
-                            className="h-[33px] w-[424.18px] font-[Poppins] text-[21.95px] font-bold capitalize leading-[100%] text-black"
+                            className="h-[33px] w-[424.182px] font-[Poppins] text-[21.95px] font-bold capitalize leading-[100%] text-black"
                         >
                             Name
                         </label>
@@ -140,15 +61,17 @@ export default function PriceCalculator() {
                             type="text"
                             name="name"
                             placeholder="Enter Your Full Name"
-                            className="h-[57px] w-[424.18px] rounded-[5px] border border-[#0000001A] bg-white px-[24px] font-[Poppins] text-[18px] font-normal italic leading-[100%] tracking-[0%] text-black outline-none placeholder:w-[191px] placeholder:text-[18px] placeholder:font-normal placeholder:italic placeholder:leading-[100%] placeholder:tracking-[0%] placeholder:capitalize placeholder:text-[#44444480] focus:border-[#AC3E25]"
+                            className="box-border h-[57px] w-[424.182px] rounded-[5px] border border-[#0000001A] bg-white px-[24px] font-[Poppins] text-[18px] font-normal italic leading-[100%] text-black outline-none placeholder:text-[#44444480] focus:border-[#AC3E25]"
                         />
+
                     </div>
 
-                    {/* Mobile Number */}
-                    <div className="flex h-[105.71px] w-[424.18px] shrink-0 flex-col gap-[15.71px]">
+                    {/* Child Layout 2 */}
+                    <div className="flex h-[105.7104px] w-[424.182px] shrink-0 flex-col gap-[15.71px]">
+
                         <label
                             htmlFor="mobile"
-                            className="h-[33px] w-[424.18px] font-[Poppins] text-[21.95px] font-bold capitalize leading-[100%] text-black"
+                            className="h-[33px] w-[424.182px] font-[Poppins] text-[21.95px] font-bold capitalize leading-[100%] text-black"
                         >
                             Mobile Number
                         </label>
@@ -158,17 +81,19 @@ export default function PriceCalculator() {
                             type="tel"
                             name="mobile"
                             placeholder="Enter Your Valid Phone Number"
-                            className="h-[57px] w-[424.18px] rounded-[5px] border border-[#0000001A] bg-white px-[24px] font-[Poppins] text-[18px] font-normal italic leading-[100%] tracking-[0%] text-black outline-none placeholder:w-[287px] placeholder:text-[18px] placeholder:font-normal placeholder:italic placeholder:leading-[100%] placeholder:tracking-[0%] placeholder:capitalize placeholder:text-[#44444480] focus:border-[#AC3E25]"
+                            className="box-border h-[57px] w-[424.182px] rounded-[5px] border border-[#0000001A] bg-white px-[24px] font-[Poppins] text-[18px] font-normal italic leading-[100%] text-black outline-none placeholder:text-[#44444480] focus:border-[#AC3E25]"
                         />
+
                     </div>
 
-                    {/* Get Price */}
-                    <div className="flex h-[105.71px] w-[242.8px] shrink-0 items-start pt-[48.71px]">
-                        <button
-                            type="button"
-                            className="flex h-[57px] w-[242.8px] shrink-0 items-center justify-between gap-[15px] rounded-[5px] border border-[#AC3E2533] bg-[#AC3E25] px-[30px] py-[15px] font-[Poppins] text-white transition-colors duration-200 hover:bg-[#922F1C]"
+                    {/* Child Layout 3 */}
+                    <div className="flex h-[105.7104px] w-[242.8px] shrink-0 items-start pt-[48.71px]">
+
+                        <Link
+                            to="/health-insurance"
+                            className="box-border flex h-[57px] w-[242.8px] shrink-0 items-center justify-between gap-[15.71px] rounded-[5px] border border-[#AC3E2533] bg-[#AC3E25] px-[30px] py-[15px] font-[Poppins] text-white transition-colors duration-200 hover:bg-[#922F1C]"
                         >
-                            <span className="h-[27px] w-[142.8px] text-left font-[Poppins] text-[18px] font-normal leading-[100%]">
+                            <span className="text-[18px] font-normal leading-[100%]">
                                 Get Price
                             </span>
 
@@ -188,10 +113,14 @@ export default function PriceCalculator() {
                                     />
                                 </svg>
                             </span>
-                        </button>
+                        </Link>
+
                     </div>
+
                 </div>
+
             </div>
+
         </section>
     );
 }
