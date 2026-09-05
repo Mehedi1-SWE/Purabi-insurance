@@ -39,7 +39,7 @@ export default function Quote() {
                 {/* LEFT IMAGE */}
                 <div className="h-[622px] w-[500px] shrink-0">
                     <img
-                        src="public/Form Container.png"
+                        src="/Form Container.png"
                         alt="Health Insurance"
                         className="h-full w-full object-contain"
                     />
