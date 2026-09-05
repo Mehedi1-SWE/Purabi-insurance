@@ -5,7 +5,7 @@ export default function Hero() {
   const [showVideo, setShowVideo] = useState(false);
 
   return (
-    <section className="relative box-border h-[800px] w-[1920px] min-w-[1280px] max-w-[1920px] overflow-hidden border border-[rgba(0,0,0,0.2)] px-[80px]">
+    <section className="relative box-border h-[800px] w-[1440px] min-w-[1280px] max-w-[1920px] overflow-hidden border border-[rgba(0,0,0,0.2)] px-[80px]">
 
       {/* Background */}
       <img
