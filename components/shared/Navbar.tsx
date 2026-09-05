@@ -2,7 +2,7 @@ import { Link } from "react-router";
 
 export default function Navbar() {
   return (
-    <nav className="box-border flex h-[83px] w-[1920px] items-center justify-between border-b border-[rgba(171,61,36,0.5)] bg-white px-[80px] py-[14px]">
+    <nav className="box-border flex h-[83px] w-[1440px] items-center justify-between border-b border-[rgba(171,61,36,0.5)] bg-[rgba(255,255,255,1)] px-[80px] py-[14px]">
 
       {/* Left Logo Layout: 184.3504 × 46.2236 */}
 
@@ -20,7 +20,7 @@ export default function Navbar() {
 
 
       {/* Right Layout: 994 × 55 | Gap: 20px */}
-      <div className="flex h-[55px] w-[994px] shrink-0 items-center gap-[20px]">
+      <div className="flex h-[55px] w-[994px] shrink-0 items-center justify-end gap-[20px]">
 
         {/* Home */}
         <Link

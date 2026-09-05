@@ -90,12 +90,12 @@ const socialLinks = [
 
 export default function Topbar() {
     return (
-        <div className="box-border flex h-[50px] w-[1920px] items-center justify-between bg-[rgba(172,62,37,1)] px-[80px] py-[8px]">
+        <div className="box-border flex h-[50px] w-[1440px] items-center justify-between bg-[rgba(172,62,37,1)] px-[80px] py-[8px]">
 
             {/* ================= LEFT LAYOUT ================= */}
-            {/* Width: 880px | Height: 18px | Gap: 10px */}
+            {/* Width: 640px | Height: 18px | Gap: 10px */}
 
-            <div className="flex h-[18px] w-[880px] shrink-0 items-center gap-[10px]">
+            <div className="flex h-[18px] w-[640px] shrink-0 items-center gap-[10px]">
 
                 {/* Location */}
                 <div className="flex h-[18px] w-[407px] shrink-0 items-center gap-[10px]">
@@ -125,6 +125,13 @@ export default function Topbar() {
                     </a>
                 </div>
 
+
+            </div>
+
+            {/* ================= RIGHT LAYOUT ================= */}
+            {/* Width: 880px | Height: 34px | Gap: 20px */}
+
+            <div className="flex h-[34px] w-[640px] shrink-0 items-center gap-[20px]">
                 {/* Phone */}
                 <div className="flex h-[18px] w-[130px] shrink-0 items-center gap-[10px]">
                     <img
@@ -140,12 +147,6 @@ export default function Topbar() {
                         +880 1714-044146
                     </a>
                 </div>
-            </div>
-
-            {/* ================= RIGHT LAYOUT ================= */}
-            {/* Width: 880px | Height: 34px | Gap: 20px */}
-
-            <div className="flex h-[34px] w-[880px] shrink-0 items-center gap-[20px]">
 
                 {/* ================= FIRST LAYOUT ================= */}
                 {/* Width: 288px | Height: 34px */}
