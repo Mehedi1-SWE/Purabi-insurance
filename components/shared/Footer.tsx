@@ -132,14 +132,14 @@ function SocialIcons() {
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-white">
+    <footer className="box-border flex h-[723px] w-[1440px] items-center justify-between bg-[linear-gradient(0deg,#FFFFFF,#FFFFFF),linear-gradient(180deg,rgba(172,62,37,0)_0%,rgba(172,62,37,0.1)_100%)] px-[80px] pb-[50px] pt-[100px]" >
       <div
         className="
           mx-auto
           flex
           min-h-[723px]
           w-full
-          max-w-[1920px]
+          max-w-[1440px]
           flex-col
           items-center
           bg-[linear-gradient(180deg,rgba(172,62,37,0)_0%,rgba(172,62,37,0.1)_100%)]

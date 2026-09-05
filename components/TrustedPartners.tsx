@@ -1,7 +1,8 @@
 export default function TrustedPartners() {
     return (
-        <section className="w-full border-t border-[#B6B6B61F] bg-white">
-            <div className="mx-auto flex h-[353px] w-full max-w-[1920px] flex-col items-center px-[80px] py-[50px]">
+        <section className="box-border flex h-[353px] w-[1440px] items-center justify-between border-t border-[rgba(0,0,0,0.2)] px-[80px] py-[50px]">
+            {/* Layout Content */}
+            <div className="mx-auto flex h-[353px] w-full max-w-[1440px] flex-col items-center px-[80px] py-[50px]">
 
                 {/* Heading */}
                 <h2 className="h-[53px] w-[737px] shrink-0 whitespace-nowrap text-center font-[Poppins] text-[35px] font-normal uppercase leading-[100%] tracking-[0%] text-black">
