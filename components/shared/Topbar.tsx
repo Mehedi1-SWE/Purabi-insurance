@@ -61,7 +61,13 @@ const socialLinks = [
             >
                 <rect x="3" y="3" width="18" height="18" rx="5" />
                 <circle cx="12" cy="12" r="4" />
-                <circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none" />
+                <circle
+                    cx="17.5"
+                    cy="6.5"
+                    r="1"
+                    fill="white"
+                    stroke="none"
+                />
             </svg>
         ),
     },
@@ -84,92 +90,99 @@ const socialLinks = [
 
 export default function Topbar() {
     return (
-        <div className="h-[50px] w-full bg-[#AC3E25] text-white">
-            <div className="flex h-full w-full items-center justify-between px-[80px] py-[8px]">
+        <div className="box-border flex h-[50px] w-[1920px] items-center justify-between bg-[rgba(172,62,37,1)] px-[80px] py-[8px]">
 
-                {/* Left Contact Group */}
-                <div className="flex h-[18px] w-[640px] items-center gap-[10px]">
+            {/* ================= LEFT LAYOUT ================= */}
+            {/* Width: 880px | Height: 18px | Gap: 10px */}
 
-                    {/* Location: 407 x 18 */}
-                    <div className="flex h-[18px] w-[407px] shrink-0 items-center gap-[10px]">
-                        <img
-                            src="/Vector (3).png"
-                            alt=""
-                            className="h-[12px] w-[9px] shrink-0"
-                        />
+            <div className="flex h-[18px] w-[880px] shrink-0 items-center gap-[10px]">
 
-                        <span className="h-[18px] w-[385px] max-w-[400px] whitespace-nowrap font-[Poppins] text-[12px] font-medium capitalize leading-[100%] tracking-[0%] text-white">
-                            Sandhani Life Tower (2nd Floor), 34 Bangla Motor, Dhaka - 1000.
-                        </span>
-                    </div>
+                {/* Location */}
+                <div className="flex h-[18px] w-[407px] shrink-0 items-center gap-[10px]">
 
-                    {/* Email: 200 x 18 */}
-                    <div className="flex h-[18px] w-[200px] shrink-0 items-center gap-[10px]">
-                        <img
-                            src="/email-14_svgrepo.com.png"
-                            alt=""
-                            className="h-[12px] w-[12px] shrink-0"
-                        />
+                    <img
+                        src="/Vector (3).png"
+                        alt=""
+                        className="h-[12px] w-[9px] shrink-0 object-contain"
+                    />
 
-                        <a
-                            href="mailto:purabiinsurance@gmail.com"
-                            className="h-[18px] w-[178px] whitespace-nowrap font-[Poppins] text-[12px] font-medium lowercase leading-[100%] tracking-[0%] text-white"
-                        >
-                            purabiinsurance@gmail.com
-                        </a>
-                    </div>
+                    <span className="h-[18px] w-[385px] whitespace-nowrap font-['Poppins'] text-[12px] font-medium capitalize leading-[100%] tracking-[0%] text-white">
+                        Sandhani Life Tower (2nd Floor), 34 Bangla Motor, Dhaka - 1000.
+                    </span>
                 </div>
 
-                {/* Right Group: 640 x 34 */}
-                <div className="flex h-[34px] w-[640px] shrink-0 items-center gap-[20px]">
+                {/* Email */}
+                <div className="flex h-[18px] w-[200px] shrink-0 items-center gap-[10px]">
 
-                    {/* Phone */}
-                    <div className="flex h-[18px] shrink-0 items-center gap-[10px]">
-                        <img
-                            src="/Vector (4).png"
-                            alt=""
-                            className="h-[9.5px] w-[9.5px] shrink-0"
-                        />
+                    <img
+                        src="/email-14_svgrepo.com.png"
+                        alt=""
+                        className="h-[12px] w-[12px] shrink-0 object-contain"
+                    />
 
+                    <a
+                        href="mailto:purabiinsurance@gmail.com"
+                        className="h-[18px] w-[178px] whitespace-nowrap font-['Poppins'] text-[12px] font-medium lowercase leading-[100%] tracking-[0%] text-white"
+                    >
+                        purabiinsurance@gmail.com
+                    </a>
+                </div>
+
+                {/* Phone */}
+                <div className="flex h-[18px] w-[180px] shrink-0 items-center gap-[10px]">
+
+                    <img
+                        src="/Vector (4).png"
+                        alt=""
+                        className="h-[10px] w-[10px] shrink-0 object-contain"
+                    />
+
+                    <a
+                        href="tel:+8801714044146"
+                        className="h-[18px] w-[108px] whitespace-nowrap font-['Poppins'] text-[12px] font-medium uppercase leading-[100%] tracking-[0%] text-white"
+                    >
+                        +880 1714-044146
+                    </a>
+                </div>
+            </div>
+
+            {/* ================= RIGHT LAYOUT ================= */}
+            {/* Width: 880px | Height: 34px | Gap: 20px */}
+
+            <div className="flex h-[34px] w-[880px] shrink-0 items-center justify-end gap-[20px]">
+
+                {/* Client Portal */}
+                <Link
+                    to="/SignUp"
+                    className="flex h-[24px] w-[114px] shrink-0 items-center justify-center whitespace-nowrap text-center font-['Poppins'] text-[16px] font-normal uppercase leading-[100%] tracking-[0%] text-white"
+                >
+                    CLIENT PORTAL
+                </Link>
+
+                {/* Agent Portal */}
+                <Link
+                    to="/agent-portal"
+                    className="flex h-[24px] w-[114px] shrink-0 items-center justify-center whitespace-nowrap text-center font-['Poppins'] text-[16px] font-normal uppercase leading-[100%] tracking-[0%] text-white"
+                >
+                    AGENT PORTAL
+                </Link>
+
+                {/* Social Group */}
+                {/* Width: 190px | Height: 30px | Gap: 10px */}
+
+                <div className="flex h-[30px] w-[190px] shrink-0 items-center gap-[10px]">
+                    {socialLinks.map((social) => (
                         <a
-                            href="tel:+8801714044146"
-                            className="h-[18px] w-[108px] whitespace-nowrap font-[Poppins] text-[12px] font-medium uppercase leading-[100%] tracking-[0%] text-white"
+                            key={social.name}
+                            href={social.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={social.name}
+                            className="flex h-[30px] w-[30px] shrink-0 items-center justify-center rounded-full bg-white/20 transition-all duration-200 hover:bg-white/30"
                         >
-                            +880 1714-044146
+                            {social.icon}
                         </a>
-                    </div>
-
-                    {/* Client Portal: 114 x 24 */}
-                    <Link
-                        to="/SignUp"
-                        className="flex h-[24px] w-[114px] shrink-0 items-center justify-center whitespace-nowrap text-center font-[Poppins] text-[16px] font-normal uppercase leading-[100%] tracking-[0%] text-white"
-                    >
-                        CLIENT PORTAL
-                    </Link>
-
-                    {/* Agent Portal */}
-                    <Link
-                        to="/agent-portal"
-                        className="flex h-[24px] w-[114px] shrink-0 items-center justify-center whitespace-nowrap text-center font-[Poppins] text-[16px] font-normal uppercase leading-[100%] tracking-[0%] text-white"
-                    >
-                        AGENT PORTAL
-                    </Link>
-
-                    {/* Social: exact Figma group 190 x 30, gap 10 */}
-                    <div className="flex h-[30px] w-[190px] shrink-0 items-center gap-[10px]">
-                        {socialLinks.map((social) => (
-                            <a
-                                key={social.name}
-                                href={social.href}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label={social.name}
-                                className="flex h-[30px] w-[30px] shrink-0 items-center justify-center rounded-full bg-white/20 transition hover:bg-white/30"
-                            >
-                                {social.icon}
-                            </a>
-                        ))}
-                    </div>
+                    ))}
                 </div>
             </div>
         </div>
