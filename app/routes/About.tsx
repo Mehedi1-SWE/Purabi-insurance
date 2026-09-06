@@ -517,14 +517,22 @@ export default function AboutSection() {
                                     </h3>
 
                                     <p className="h-[48px] w-[470px] font-['Poppins'] text-[18px] font-normal leading-[24px] text-[#000000B2]">
-                                        Your money is 100% secure with us, ensuring peace of mind.
+                                        Access your money anytime with Anytime Money Back for maximum convenience.
                                     </p>
 
                                 </div>
 
                             </div>
 
-                            <div className="absolute left-[16px] top-0 box-border h-[125px] w-[99px] rounded-tl-[20px] rounded-br-[20px] rounded-bl-[20px] border-[3px] border-white bg-[#AC3E25] shadow-[1px_2px_21px_0px_#00000026]" />
+                            <div className="absolute left-[16px] top-0 box-border flex h-[125px] w-[99px] items-center justify-center rounded-tl-[20px] rounded-br-[20px] rounded-bl-[20px] border-[3px] border-white bg-[#AC3E25] px-[17px] py-[30px] shadow-[1px_2px_21px_0px_#00000026]">
+
+                                <img
+                                    src="/public/Money Back.png"
+                                    alt="Money Back"
+                                    className="block h-full w-full object-contain"
+                                />
+
+                            </div>
 
                         </div>
 
@@ -537,18 +545,26 @@ export default function AboutSection() {
                                 <div className="flex h-[86px] w-[470px] flex-col gap-[10px]">
 
                                     <h3 className="h-[28px] w-[470px] whitespace-nowrap bg-gradient-to-b from-[#AC3E25] to-[#46190F] bg-clip-text font-['Poppins'] text-[25px] font-semibold leading-[26.4px] text-transparent">
-                                        Anytime Money Back
+                                        Fast Process
                                     </h3>
 
                                     <p className="h-[48px] w-[470px] font-['Poppins'] text-[18px] font-normal leading-[24px] text-[#000000B2]">
-                                        Your money is 100% secure with us, ensuring peace of mind.
+                                        Experience a Fast Process with quick and efficient solutions tailored to your needs.
                                     </p>
 
                                 </div>
 
                             </div>
 
-                            <div className="absolute left-[16px] top-0 box-border h-[125px] w-[99px] rounded-tl-[20px] rounded-br-[20px] rounded-bl-[20px] border-[3px] border-white bg-[#AC3E25] shadow-[1px_2px_21px_0px_#00000026]" />
+                            <div className="absolute left-[16px] top-0 box-border flex h-[125px] w-[99px] items-center justify-center rounded-tl-[20px] rounded-br-[20px] rounded-bl-[20px] border-[3px] border-white bg-[#AC3E25] px-[17px] py-[30px] shadow-[1px_2px_21px_0px_#00000026]">
+
+                                <img
+                                    src="/Fast Process.png"
+                                    alt="Fast Process"
+                                    className="block h-full w-full object-contain"
+                                />
+
+                            </div>
 
                         </div>
 
