@@ -75,72 +75,83 @@ function SocialIcons() {
   );
 }
 
+
+
 export default function Footer() {
   return (
-    <footer className="relative box-border flex h-[723px] w-[1440px] overflow-hidden bg-white px-[80px] pb-[50px] pt-[100px]">
 
-      {/* Background Gradient */}
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(172,62,37,0)_0%,rgba(172,62,37,0.1)_100%)]" />
-
-      {/* Main Layout: 1440 × 723 */}
+    <footer className="relative box-border flex h-[723px] w-[1440px] overflow-hidden bg-[linear-gradient(180deg,rgba(172,62,37,0)_0%,rgba(172,62,37,0.1)_100%)] px-[80px] pb-[50px] pt-[100px]">
       <div className="relative flex h-full w-[1280px] flex-col items-center justify-between">
 
-        {/* 1st Layout: 1280 × 248 | Gap: 20px */}
+        {/* Layout 1 — 1280 × 248 */}
         <div className="flex h-[248px] w-[1280px] shrink-0 flex-col gap-[20px]">
 
-          {/* Child Layout: 1280 × 55 | Gap: 20px */}
-          <div className="flex h-[55px] w-[1280px] shrink-0 items-center justify-center gap-[20px]">
+          {/* Layout 1.1 — 1280 × 173 */}
+          <div className="flex h-[173px] w-[1280px] shrink-0 flex-col gap-[20px]">
 
-            <p className="font-['Poppins'] text-[12px] font-normal leading-[100%] text-[#777777]">
-              Are you ready?
-            </p>
+            {/* Layout 1.1.1 — 1280 × 98 */}
+            <div className="flex h-[98px] w-[1280px] shrink-0 flex-col">
 
-            <h2 className="font-['Poppins'] text-[48px] font-bold leading-[100%] tracking-[-0.44px] text-black">
-              Get Your Insurance Now!
-            </h2>
+              {/* Layout 1.1.1.1 — 1280 × 26 */}
+              <div className="flex h-[26px] w-[1280px] shrink-0 items-center justify-center opacity-50">
+                <p className="font-['Poppins'] text-[12px] font-normal leading-[100%] text-black">
+                  Are you ready?
+                </p>
+              </div>
 
-            <Link to="/quote" className="flex h-[55px] w-[250px] shrink-0 items-center justify-center gap-[20px] rounded-[5px] border border-[#00000033] bg-[#AC3E25] px-[24px] py-[14px] font-['Poppins'] text-[18px] font-medium leading-[100%] text-white transition hover:bg-[#922F1C]">
-              <span>Buy Now</span>
-              <ArrowIcon />
-            </Link>
+              {/* Layout 1.1.1.2 — 1280 × 72 */}
+              <div className="flex h-[72px] w-[1280px] shrink-0 items-center justify-center">
+                <h2 className="font-['Poppins'] text-center text-[48px] font-bold leading-[100%] tracking-[-0.44px] text-black">
+                  Get Your Insurance Now!
+                </h2>
+              </div>
+            </div>
 
+            {/* Layout 1.1.2 — 250 × 55 */}
+            <div className="flex h-[55px] w-[1280px] shrink-0 items-center justify-center">
+              <Link
+                to="/quote"
+                className="flex h-[55px] w-[250px] shrink-0 items-center justify-center gap-[20px] rounded-[5px] border border-[rgba(0,0,0,0.2)] bg-[rgba(172,62,37,1)] px-[24px] py-[14px] font-['Poppins'] text-[18px] font-medium leading-[100%] text-white transition hover:bg-[#922F1C]"
+              >
+                <span>Buy Now</span>
+                <ArrowIcon />
+              </Link>
+            </div>
           </div>
 
-          {/* Navigation */}
-          <nav className="flex h-[55px] w-[1280px] items-center justify-center">
+          {/* Layout 1.2 — 1280 × 55 */}
+          <nav className="flex h-[55px] w-[1280px] shrink-0 items-center justify-center gap-[20px]">
             <div className="flex h-[55px] items-center gap-[20px]">
               {navigationLinks.map((link) => (
-                <Link key={link.path} to={link.path} className="flex h-[55px] items-center justify-center gap-[8px] px-[20px] py-[14px] font-['Poppins'] text-[13px] font-normal leading-[100%] text-black transition hover:text-[#AC3E25]">
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className="flex h-[55px] items-center justify-center gap-[8px] px-[20px] py-[14px] font-['Poppins'] text-[13px] font-normal leading-[100%] text-black transition hover:text-[#AC3E25]"
+                >
                   {link.name}
                   {link.arrow && <DropdownArrow />}
                 </Link>
               ))}
             </div>
           </nav>
-
         </div>
 
-        {/* 2nd Layout: 347 × 76 | Gap: 30px */}
+        {/* Layout 2 — 347 × 76 */}
         <div className="flex h-[76px] w-[347px] shrink-0 flex-col items-center gap-[30px]">
-
           <SocialIcons />
 
           <p className="h-[24px] w-[347px] font-['Poppins'] text-[20px] font-normal leading-[24px] text-black">
             Sunday to Thursday : 10 AM to 6 PM
           </p>
-
         </div>
 
-        {/* 3rd Layout: 1280 × 144 | Gap: 10px */}
+        {/* Layout 3 — 1280 × 144 */}
         <section className="flex h-[144px] w-[1280px] shrink-0 flex-col gap-[10px]">
-
           <p className="h-[18px] w-[111px] shrink-0 font-['Poppins'] text-[12px] font-normal leading-[100%] tracking-[-0.2px] text-[#444444]">
             Payment Channels
           </p>
 
           <div className="flex h-[116px] w-[1280px] flex-col gap-[20px]">
-
-            {/* Payment Row 1 */}
             <div className="flex h-[48px] w-full items-center justify-start gap-[20px]">
               {paymentMethods.slice(0, 11).map((payment) => (
                 <div key={payment.name} className="flex h-[48px] w-[98.67px] shrink-0 items-center justify-center rounded-[5px] border border-[#AC3E2533] bg-white">
@@ -149,7 +160,6 @@ export default function Footer() {
               ))}
             </div>
 
-            {/* Payment Row 2 */}
             <div className="flex h-[48px] w-full items-center justify-center gap-[20px]">
               {paymentMethods.slice(11).map((payment) => (
                 <div key={payment.name} className="flex h-[48px] w-[98.67px] shrink-0 items-center justify-center rounded-[5px] border border-[#AC3E2533] bg-white">
@@ -157,13 +167,11 @@ export default function Footer() {
                 </div>
               ))}
             </div>
-
           </div>
         </section>
 
-        {/* 4th Layout: 1280 × 23 | Gap: 50px */}
+        {/* Layout 4 — 1280 × 23 */}
         <div className="flex h-[23px] w-[1280px] shrink-0 items-center gap-[50px]">
-
           <p className="font-['Poppins'] text-[15px] font-normal leading-[100%] tracking-[-0.2px] text-[#444444]">
             Copyright ©{" "}
             <span className="font-bold text-[#AC3E25]">
@@ -179,7 +187,6 @@ export default function Footer() {
               </Link>
             ))}
           </div>
-
         </div>
 
       </div>
