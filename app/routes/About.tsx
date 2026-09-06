@@ -527,7 +527,7 @@ export default function AboutSection() {
                             <div className="absolute left-[16px] top-0 box-border flex h-[125px] w-[99px] items-center justify-center rounded-tl-[20px] rounded-br-[20px] rounded-bl-[20px] border-[3px] border-white bg-[#AC3E25] px-[17px] py-[30px] shadow-[1px_2px_21px_0px_#00000026]">
 
                                 <img
-                                    src="/public/Money Back.png"
+                                    src="/Money Back.png"
                                     alt="Money Back"
                                     className="block h-full w-full object-contain"
                                 />
