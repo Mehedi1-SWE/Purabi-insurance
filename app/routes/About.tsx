@@ -75,7 +75,7 @@ export default function AboutSection() {
                         <div className="absolute left-0 top-0 h-[421.61px] w-[428.86px] overflow-hidden rounded-[22.73px]">
 
                             <img
-                                src="/About Image.jpg"
+                                src="/Family.jpg"
                                 alt="Family"
                                 className="h-full w-full object-cover"
                             />
@@ -146,7 +146,7 @@ export default function AboutSection() {
                             <div className="h-[100px] w-[100px] shrink-0 overflow-hidden rounded-[13.01px] border-[3.9px] border-solid border-[#F6F6F6]">
 
                                 <img
-                                    src="/AboutSatisfied.jpg"
+                                    src="/Satisfied.jpg"
                                     alt="Satisfied client"
                                     className="h-full w-full object-cover"
                                 />
