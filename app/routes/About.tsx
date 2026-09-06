@@ -75,7 +75,7 @@ export default function AboutSection() {
                         <div className="absolute left-0 top-0 h-[421.61px] w-[428.86px] overflow-hidden rounded-[22.73px]">
 
                             <img
-                                src="/Family.jpg"
+                                src="/about-image.jpg.png"
                                 alt="Family"
                                 className="h-full w-full object-cover"
                             />
@@ -128,7 +128,7 @@ export default function AboutSection() {
                         <div className="absolute left-[308.35px] top-[274.79px] z-10 h-[316.21px] w-[321.65px] overflow-hidden rounded-[23.86px] border-[12px] border-solid border-white">
 
                             <img
-                                src="/Umbrella.jpg"
+                                src="/about-image-4.jpg.png"
                                 alt="Insurance protection"
                                 className="h-full w-full object-cover"
                             />
@@ -146,7 +146,7 @@ export default function AboutSection() {
                             <div className="h-[100px] w-[100px] shrink-0 overflow-hidden rounded-[13.01px] border-[3.9px] border-solid border-[#F6F6F6]">
 
                                 <img
-                                    src="/Satisfied.jpg"
+                                    src="/satis.jpg"
                                     alt="Satisfied client"
                                     className="h-full w-full object-cover"
                                 />
@@ -450,7 +450,7 @@ export default function AboutSection() {
                             <div className="h-[255px] w-[290px] shrink-0 overflow-hidden rounded-[20px]">
 
                                 <img
-                                    src="public/Insurance About.jpg"
+                                    src="/Insurance About.jpg"
                                     alt="Insurance"
                                     className="h-full w-full object-cover"
                                 />
@@ -640,6 +640,9 @@ export default function AboutSection() {
         </>
     );
 }
+
+
+
 
 
 
