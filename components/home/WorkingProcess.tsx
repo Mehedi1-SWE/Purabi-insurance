@@ -17,7 +17,7 @@ export default function WorkingProcess() {
 
                 {/* Inner Background Image */}
                 <img
-                    src="/public/Background22.png"
+                    src="/Background22.png"
                     alt=""
                     className="absolute inset-0 h-full w-full object-cover"
                 />

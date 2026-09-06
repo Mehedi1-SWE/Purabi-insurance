@@ -151,7 +151,7 @@ export default function Category() {
   const hasMore = currentStart < 4;
 
   return (
-    <section className="box-border flex h-[689.1875px] w-full min-w-[1280px] max-w-[1920px] flex-col gap-[60px] overflow-hidden bg-white px-[80px] py-[50px]">
+    <section className="box-border flex h-[689.1875px] w-[1440px] shrink-0 flex-col gap-[60px] overflow-hidden bg-white px-[80px] py-[50px]">
       {/* =====================================================
           MAIN LAYOUT
           1440 × 689.1875
