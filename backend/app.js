@@ -7,6 +7,8 @@ const adminRoutes = require("./routes/adminRoutes");
 const authRoutes = require("./routes/authRoutes");
 const agentRoutes = require("./routes/agentRoutes");
 const clientRoutes = require("./routes/clientRoutes");
+const contactRoutes = require("./routes/contactRoutes");
+
 const app = express();
 
 // ==============================
@@ -70,5 +72,17 @@ app.use("/api/auth", authRoutes);
 // ==============================
 
 app.use("/api/agent", agentRoutes);
+
+// ==============================
+// Client Routes
+// ==============================
+
 app.use("/api/client", clientRoutes);
+
+// ==============================
+// Contact Routes
+// ==============================
+
+app.use("/api", contactRoutes);
+
 module.exports = app;

@@ -1,7 +1,67 @@
 
+import { useState } from "react";
 import { Link } from "react-router";
 
 export default function ContactUs() {
+    const [formData, setFormData] = useState({
+        fullName: "",
+        email: "",
+        phone: "",
+        subject: "",
+        message: "",
+    });
+
+    const [status, setStatus] = useState("");
+    const [loading, setLoading] = useState(false);
+
+    const handleChange = (
+        e: React.ChangeEvent<
+            HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+        >
+    ) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value,
+        });
+    };
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
+        setLoading(true);
+        setStatus("");
+
+        try {
+            const response = await fetch("http://localhost:5000/api/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                setStatus("Your message has been sent successfully.");
+
+                setFormData({
+                    fullName: "",
+                    email: "",
+                    phone: "",
+                    subject: "",
+                    message: "",
+                });
+            } else {
+                setStatus("Unable to send your message.");
+            }
+        } catch (error) {
+            setStatus("Something went wrong. Please try again.");
+        } finally {
+            setLoading(false);
+        }
+    };
+
     return (
         <div className="min-h-screen bg-[#faf9f8] font-['Poppins'] text-[#171313]">
 
@@ -26,7 +86,6 @@ export default function ContactUs() {
 
                 <div className="absolute -bottom-[180px] -right-[60px] h-[340px] w-[340px] rounded-full border border-[#ac3e25]/[0.08]" />
 
-
                 {/* =====================================================
                     SAME CONTENT WIDTH / ALIGNMENT
                 ===================================================== */}
@@ -47,7 +106,6 @@ export default function ContactUs() {
 
                         </div>
 
-
                         {/* Heading */}
                         <h1 className="max-w-[760px] text-[38px] font-semibold leading-[1.08] tracking-[-1px] text-[#211a18] sm:text-[46px] lg:text-[54px]">
 
@@ -59,7 +117,6 @@ export default function ContactUs() {
 
                         </h1>
 
-
                         {/* Description */}
                         <p className="mt-5 max-w-[700px] text-[13px] leading-[1.8] text-[#625a56] sm:text-[14px]">
 
@@ -68,7 +125,6 @@ export default function ContactUs() {
                             ready to help you find the right way forward.
 
                         </p>
-
 
                         {/* Buttons */}
                         <div className="mt-7 flex flex-wrap items-center gap-3">
@@ -85,7 +141,6 @@ export default function ContactUs() {
 
                             </a>
 
-
                             <a
                                 href="#contact-information"
                                 className="inline-flex items-center rounded-[5px] border border-[#d7cdc8] bg-white/70 px-6 py-3.5 text-[12px] font-medium text-[#403835] backdrop-blur-sm transition-all duration-300 hover:border-[#ac3e25]/30 hover:bg-white"
@@ -94,7 +149,6 @@ export default function ContactUs() {
                             </a>
 
                         </div>
-
 
                         {/* Trust Line */}
                         <div className="mt-6 flex flex-wrap items-center gap-3 text-[10px] text-[#817873]">
@@ -125,12 +179,10 @@ export default function ContactUs() {
 
                 </div>
 
-
                 {/* Bottom Accent */}
                 <div className="absolute bottom-0 left-0 h-[3px] w-full bg-gradient-to-r from-[#ac3e25] via-[#ac3e25]/35 to-transparent" />
 
             </section>
-
 
             {/* =========================================================
                 CONTACT INFORMATION + FORM
@@ -142,7 +194,6 @@ export default function ContactUs() {
 
                 <div className="grid w-full gap-10 lg:grid-cols-[390px_minmax(0,1fr)]">
 
-
                     {/* =====================================================
                         CONTACT INFORMATION CARD
                     ===================================================== */}
@@ -153,28 +204,23 @@ export default function ContactUs() {
 
                         <div className="absolute -bottom-[100px] -left-[70px] h-[240px] w-[240px] rounded-full bg-[#ac3e25]/10 blur-[20px]" />
 
-
                         <div className="relative">
 
                             <p className="text-[10px] font-medium uppercase tracking-[1.8px] text-white/40">
                                 Purabi Insurance
                             </p>
 
-
                             <h2 className="mt-5 max-w-[320px] text-[29px] font-semibold leading-[1.25] tracking-[-0.5px]">
                                 Let's make insurance easier for you.
                             </h2>
-
 
                             <p className="mt-4 max-w-[330px] text-[13px] leading-[1.8] text-white/50">
                                 Have a question? Our team is ready to help you understand
                                 your policy, claim or coverage options.
                             </p>
 
-
                             {/* Contact Details */}
                             <div className="mt-10 space-y-6">
-
 
                                 {/* Office */}
                                 <div className="flex gap-4">
@@ -199,7 +245,6 @@ export default function ContactUs() {
 
                                 </div>
 
-
                                 {/* Support */}
                                 <div className="flex gap-4">
 
@@ -222,7 +267,6 @@ export default function ContactUs() {
                                     </div>
 
                                 </div>
-
 
                                 {/* Enquiries */}
                                 <div className="flex gap-4">
@@ -249,7 +293,6 @@ export default function ContactUs() {
 
                             </div>
 
-
                             {/* Bottom Text */}
                             <div className="mt-10 border-t border-white/[0.08] pt-6">
 
@@ -262,7 +305,6 @@ export default function ContactUs() {
                         </div>
 
                     </div>
-
 
                     {/* =====================================================
                         CONTACT FORM
@@ -292,17 +334,14 @@ export default function ContactUs() {
 
                             </div>
 
-
                             <div className="hidden h-[42px] w-[42px] shrink-0 items-center justify-center rounded-[6px] bg-[#ac3e25]/10 text-[17px] text-[#ac3e25] sm:flex">
                                 →
                             </div>
 
                         </div>
 
-
                         {/* Form */}
-                        <form className="mt-8">
-
+                        <form className="mt-8" onSubmit={handleSubmit}>
 
                             {/* Name + Email */}
                             <div className="grid gap-5 sm:grid-cols-2">
@@ -315,12 +354,15 @@ export default function ContactUs() {
 
                                     <input
                                         type="text"
+                                        name="fullName"
+                                        value={formData.fullName}
+                                        onChange={handleChange}
                                         placeholder="Your name"
+                                        required
                                         className="mt-2 h-[48px] w-full rounded-[5px] border border-[#ddd5d1] bg-[#fdfcfb] px-4 text-[13px] text-[#222] outline-none transition-all placeholder:text-[#aaa3a0] focus:border-[#ac3e25] focus:bg-white focus:ring-2 focus:ring-[#ac3e25]/10"
                                     />
 
                                 </label>
-
 
                                 <label className="block">
 
@@ -330,14 +372,17 @@ export default function ContactUs() {
 
                                     <input
                                         type="email"
+                                        name="email"
+                                        value={formData.email}
+                                        onChange={handleChange}
                                         placeholder="you@example.com"
+                                        required
                                         className="mt-2 h-[48px] w-full rounded-[5px] border border-[#ddd5d1] bg-[#fdfcfb] px-4 text-[13px] text-[#222] outline-none transition-all placeholder:text-[#aaa3a0] focus:border-[#ac3e25] focus:bg-white focus:ring-2 focus:ring-[#ac3e25]/10"
                                     />
 
                                 </label>
 
                             </div>
-
 
                             {/* Phone + Subject */}
                             <div className="mt-5 grid gap-5 sm:grid-cols-2">
@@ -350,12 +395,15 @@ export default function ContactUs() {
 
                                     <input
                                         type="tel"
+                                        name="phone"
+                                        value={formData.phone}
+                                        onChange={handleChange}
                                         placeholder="+880"
+                                        required
                                         className="mt-2 h-[48px] w-full rounded-[5px] border border-[#ddd5d1] bg-[#fdfcfb] px-4 text-[13px] text-[#222] outline-none transition-all placeholder:text-[#aaa3a0] focus:border-[#ac3e25] focus:bg-white focus:ring-2 focus:ring-[#ac3e25]/10"
                                     />
 
                                 </label>
-
 
                                 <label className="block">
 
@@ -364,7 +412,10 @@ export default function ContactUs() {
                                     </span>
 
                                     <select
-                                        defaultValue=""
+                                        name="subject"
+                                        value={formData.subject}
+                                        onChange={handleChange}
+                                        required
                                         className="mt-2 h-[48px] w-full rounded-[5px] border border-[#ddd5d1] bg-[#fdfcfb] px-4 text-[13px] text-[#555] outline-none transition-all focus:border-[#ac3e25] focus:bg-white focus:ring-2 focus:ring-[#ac3e25]/10"
                                     >
 
@@ -394,7 +445,6 @@ export default function ContactUs() {
 
                             </div>
 
-
                             {/* Message */}
                             <label className="mt-5 block">
 
@@ -403,28 +453,39 @@ export default function ContactUs() {
                                 </span>
 
                                 <textarea
+                                    name="message"
+                                    value={formData.message}
+                                    onChange={handleChange}
                                     placeholder="Tell us a little more about how we can help..."
+                                    required
                                     className="mt-2 h-[145px] w-full resize-none rounded-[5px] border border-[#ddd5d1] bg-[#fdfcfb] p-4 text-[13px] leading-[1.6] text-[#222] outline-none transition-all placeholder:text-[#aaa3a0] focus:border-[#ac3e25] focus:bg-white focus:ring-2 focus:ring-[#ac3e25]/10"
                                 />
 
                             </label>
 
-
                             {/* Submit */}
                             <div className="mt-6 flex flex-col justify-between gap-4 border-t border-[#eee8e5] pt-6 sm:flex-row sm:items-center">
 
-                                <p className="max-w-[430px] text-[10px] leading-[1.6] text-[#99918d]">
-                                    By submitting this form, you agree that our team may contact
-                                    you regarding your enquiry.
-                                </p>
+                                <div>
+                                    <p className="max-w-[430px] text-[10px] leading-[1.6] text-[#99918d]">
+                                        By submitting this form, you agree that our team may contact
+                                        you regarding your enquiry.
+                                    </p>
 
+                                    {status && (
+                                        <p className="mt-2 text-[11px] font-medium text-[#ac3e25]">
+                                            {status}
+                                        </p>
+                                    )}
+                                </div>
 
                                 <button
-                                    type="button"
-                                    className="group inline-flex shrink-0 items-center justify-center gap-3 rounded-[5px] bg-[#ac3e25] px-7 py-3.5 text-[12px] font-medium text-white shadow-[0_8px_20px_rgba(172,62,37,0.16)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#922f1c] hover:shadow-[0_12px_26px_rgba(172,62,37,0.22)]"
+                                    type="submit"
+                                    disabled={loading}
+                                    className="group inline-flex shrink-0 items-center justify-center gap-3 rounded-[5px] bg-[#ac3e25] px-7 py-3.5 text-[12px] font-medium text-white shadow-[0_8px_20px_rgba(172,62,37,0.16)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#922f1c] hover:shadow-[0_12px_26px_rgba(172,62,37,0.22)] disabled:cursor-not-allowed disabled:opacity-60"
                                 >
 
-                                    Send message
+                                    {loading ? "Sending..." : "Send message"}
 
                                     <span className="transition-transform duration-300 group-hover:translate-x-1">
                                         →
@@ -442,7 +503,6 @@ export default function ContactUs() {
 
             </section>
 
-
             {/* =========================================================
                 BOTTOM CTA
             ========================================================= */}
@@ -452,7 +512,6 @@ export default function ContactUs() {
 
                     {/* Decorative Circle */}
                     <div className="absolute -right-[70px] -top-[110px] h-[270px] w-[270px] rounded-full border border-[#ac3e25]/10" />
-
 
                     <div className="relative flex flex-col justify-between gap-6 sm:flex-row sm:items-center">
 
@@ -471,7 +530,6 @@ export default function ContactUs() {
                             </p>
 
                         </div>
-
 
                         <Link
                             to="/quote"
@@ -495,4 +553,3 @@ export default function ContactUs() {
         </div>
     );
 }
-
